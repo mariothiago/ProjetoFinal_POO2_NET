@@ -1,5 +1,3 @@
-using System;
-
 namespace ProjetoFinal_POO2.Models
 {
     public class ErrorViewModel
