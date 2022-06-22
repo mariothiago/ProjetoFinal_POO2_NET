@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoFinal_POO2.Models;
 using ProjetoFinal_POO2.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProjetoFinal_POO2.Controllers
@@ -18,19 +15,24 @@ namespace ProjetoFinal_POO2.Controllers
             _service = service;
         }
 
-        //[HttpPost("cadastro")]
-        //public async Task<IActionResult> CreateAluno([FromForm] Professor professor)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return BadRequest(ModelState);
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-        //    var data = await _service.CadastroAlunos(aluno);
+        [HttpPost("cadastro")]
+        public async Task<IActionResult> CreateProfessor([FromForm] Professor professor)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-        //    if (data > 0)
-        //        return Redirect("/");
-        //    else
-        //        return BadRequest();
+            var data = await _service.CreateProfessor(professor);
 
-        //}
+            if (data > 0)
+                return Redirect("/Sucesso");
+            else
+                return BadRequest();
+
+        }
     }
 }

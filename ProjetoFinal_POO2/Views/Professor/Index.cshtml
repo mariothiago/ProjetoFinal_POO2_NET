@@ -1,18 +1,18 @@
 ﻿@{
-    ViewData["Title"] = "Aluno";
+    ViewData["Title"] = "Professor";
 }
 
 @model Professor
 
 <div class="text-center">
-    <h1 class="display-4">Bem vindo ao sistema de alunos</h1>
+    <h1 class="display-4">Bem vindo ao sistema de professores da Faculdade Lourenço Filho!</h1>
     @using (Html.BeginForm("CreateProfessor", "Professor"))
     {
         <form method="post">
             <fieldset data-bind="model" >
-                <legend>Cadastrar aluno</legend>
+                <legend>Cadastro de professor</legend>
                 <div>
-                    <label asp-for="Nome">Nome do aluno:</label>
+                    <label asp-for="Nome">Nome do professor:</label>
                     <input asp-for="Nome" type="text" name="Nome" value="" />
                 </div>
                 <div>
@@ -20,7 +20,7 @@
                     <input asp-for="CPF" type="text" name="CPF" value="" />
                 </div>
                 <div>
-                    <label asp-for="Salario">Matricula:</label>
+                    <label asp-for="Salario">Salario:</label>
                     <input asp-for="Salario" type="text" name="Salario" value="" />
                 </div>
                 <div>

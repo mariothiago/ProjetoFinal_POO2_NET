@@ -26,6 +26,7 @@ namespace ProjetoFinal_POO2
             services.AddControllersWithViews();
 
             services.AddTransient<IAlunoService, AlunoService>();
+            services.AddTransient<IProfessorService, ProfessorService>();
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(
                Configuration.GetConnectionString("DefaultConnection"),
